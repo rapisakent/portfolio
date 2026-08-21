@@ -11,10 +11,10 @@
 */
 
 const graphicDesignProjects = [
-  { id: 1,  title: "Ang Sidlakan Publication — Recruitment Campaign",            category: "Publication Design", image: "uncover.jpg", description: "Publication recruitment campaign for aspiring campus journalists and creatives.", year: "2025" },
-  { id: 2,  title: "Kasikas sa Kagabhion — The 2024 Halloween Specials",      category: "Publication Design", image: "Kasikas sa Kagabhion.jpg", description: "Editorial poster set for a music festival.", year: "2025" },
+  { id: 1,  title: "Aurora Rebrand",            category: "Graphic Design", image: "YOUR-IMAGE-LINK-01", description: "Full visual identity for a wellness brand.", year: "2026" },
+  { id: 2,  title: "Nocturne Poster Series",      category: "Graphic Design", image: "YOUR-IMAGE-LINK-02", description: "Editorial poster set for a music festival.", year: "2025" },
   { id: 3,  title: "Fieldnote Stationery",        category: "Graphic Design", image: "YOUR-IMAGE-LINK-03", description: "Print stationery system for a studio brand.", year: "2025" },
-  { id: 4,  title: "Verdant Packaging",           category: "Graphic Design", image: "kent-rapisa.jpg", description: "Packaging design for a botanical skincare line.", year: "2026" },
+  { id: 4,  title: "Verdant Packaging",           category: "Graphic Design", image: "YOUR-IMAGE-LINK-04", description: "Packaging design for a botanical skincare line.", year: "2026" },
   { id: 5,  title: "Halcyon Typeface Poster",      category: "Graphic Design", image: "YOUR-IMAGE-LINK-05", description: "Type specimen poster for an in-house typeface.", year: "2024" },
   { id: 6,  title: "Meridian Annual Report",       category: "Graphic Design", image: "YOUR-IMAGE-LINK-06", description: "Layout and infographics for an annual report.", year: "2025" },
   { id: 7,  title: "Salt & Stone Menu System",     category: "Graphic Design", image: "YOUR-IMAGE-LINK-07", description: "Print menu and signage for a restaurant group.", year: "2025" },
@@ -277,6 +277,30 @@ document.addEventListener("DOMContentLoaded", () => {
       mobileMenu.classList.remove("is-open");
       navBurger.classList.remove("is-open");
       document.body.style.overflow = "";
+    });
+  });
+
+  /* ---------- brand-veil transition on in-page link clicks ---------- */
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll(
+    ".nav-link, .nav-logo, .mobile-link, .nav-cta, .mobile-cta, .hero-actions a, .service-cta, .price-cta"
+  ).forEach(link => {
+    const href = link.getAttribute("href") || "";
+    if (!href.startsWith("#") || href.length < 2) return;
+    const target = document.getElementById(href.slice(1));
+    if (!target) return;
+
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      if (reduceMotion){
+        target.scrollIntoView({ behavior: "auto", block: "start" });
+        return;
+      }
+      veil.classList.remove("is-hidden");
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: "auto", block: "start" });
+        setTimeout(() => veil.classList.add("is-hidden"), 60);
+      }, 380);
     });
   });
 
