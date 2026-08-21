@@ -98,6 +98,23 @@ const videoProjects = [
 
 document.addEventListener("DOMContentLoaded", () => {
 
+  /* ---------- color mode toggle ---------- */
+  const rootEl = document.documentElement;
+  const themeToggles = [document.getElementById("themeToggle"), document.getElementById("themeToggleMobile")]
+    .filter(Boolean);
+
+  function setTheme(theme){
+    rootEl.setAttribute("data-theme", theme);
+    try{ localStorage.setItem("kent-theme", theme); }catch(e){}
+  }
+
+  themeToggles.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const next = rootEl.getAttribute("data-theme") === "light" ? "dark" : "light";
+      setTheme(next);
+    });
+  });
+
   /* ---------- page-load veil ---------- */
   const veil = document.getElementById("veil");
   window.addEventListener("load", () => {
