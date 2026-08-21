@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kent Studio — Graphic Design, Social Media &amp; Web Development</title>
+<meta name="description" content="Kent Studio is a creative digital studio specializing in graphic design, social media management, and web development.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- custom cursor (desktop only) -->
+<div class="cursor" id="cursor"><span id="cursorLabel"></span></div>
+
+<!-- page load veil -->
+<div class="veil" id="veil"><span>Kent Studio</span></div>
+
+<!-- ============ NAVIGATION ============ -->
+<header class="nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">Kent&nbsp;Studio</a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#work" class="nav-link" data-nav="work">Work</a>
+      <a href="#about" class="nav-link" data-nav="about">About</a>
+      <a href="#services" class="nav-link" data-nav="services">Services</a>
+      <a href="#pricing" class="nav-link" data-nav="pricing">Pricing</a>
+      <a href="#process" class="nav-link" data-nav="process">Process</a>
+      <a href="#contact" class="nav-link" data-nav="contact">Contact</a>
+    </nav>
+
+    <a href="#contact" class="btn btn-outline nav-cta">Start a Project</a>
+
+    <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <nav>
+    <a href="#work" class="mobile-link">Work</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#services" class="mobile-link">Services</a>
+    <a href="#pricing" class="mobile-link">Pricing</a>
+    <a href="#process" class="mobile-link">Process</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </nav>
+  <a href="#contact" class="btn btn-primary mobile-cta">Start a Project</a>
+</div>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Kent Studio — Creative Digital Practice</p>
+        <h1 class="hero-title">
+          Design that makes your
+          <span class="hero-rotator">
+            <span class="rotator-track" id="rotatorTrack">
+              <span class="rotator-word">brand</span>
+              <span class="rotator-word">business</span>
+              <span class="rotator-word">message</span>
+              <span class="rotator-word">brand</span>
+            </span>
+          </span>
+          impossible to ignore.
+        </h1>
+        <p class="hero-sub">Graphic design, social media, and web experiences built to look sharp, communicate clearly, and move your business forward.</p>
+        <div class="hero-actions">
+          <a href="#work" class="btn btn-primary">View Selected Work</a>
+          <a href="#contact" class="btn btn-ghost">Start a Project</a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" aria-hidden="true">
+        <div class="reel">
+          <div class="reel-track" id="reelTrack"></div>
+        </div>
+        <div class="hero-visual-frame"></div>
+      </div>
+    </div>
+    <div class="hero-baseline">
+      <span>Graphic Design</span><span>·</span><span>Social Media</span><span>·</span><span>Web Development</span>
+    </div>
+  </section>
+
+  <!-- ============ SELECTED WORK ============ -->
+  <section class="work" id="work">
+    <div class="section-head reveal">
+      <p class="eyebrow">Selected Work</p>
+      <h2 class="section-title">A body of work built on clarity, craft, and intention.</h2>
+    </div>
+
+    <div class="filters reveal" id="filters" role="tablist" aria-label="Filter work by category">
+      <button class="filter-btn is-active" data-filter="All">All</button>
+      <button class="filter-btn" data-filter="Graphic Design">Graphic Design</button>
+      <button class="filter-btn" data-filter="Social Media">Social Media</button>
+      <button class="filter-btn" data-filter="Web Development">Web Development</button>
+      <button class="filter-btn" data-filter="Ads">Ads</button>
+    </div>
+
+    <div class="gallery" id="gallery"><!-- graphic design cards injected by script.js --></div>
+
+    <div class="video-head reveal">
+      <p class="eyebrow">Motion &amp; Video</p>
+      <h3 class="section-title section-title--sm">Selected motion work.</h3>
+    </div>
+
+    <div class="video-grid" id="videoGrid"><!-- video cards injected by script.js --></div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-copy reveal">
+        <p class="eyebrow">About Kent Studio</p>
+        <h2 class="section-title">A creative partner, not just a pair of hands.</h2>
+        <p class="about-text">Kent Studio exists at the intersection of strategic design and clear communication. We build strong visual identities and digital experiences that help businesses look professional, feel memorable, and move with confidence — from the first sketch to the last pixel.</p>
+        <p class="about-text">Every project starts with a question: what does this brand need to say, and to whom? The answer shapes the direction, the palette, the layout, and the pixel-level decisions that follow.</p>
+      </div>
+      <div class="about-photo reveal">
+        <div class="about-photo-frame">
+          <img src="kent-rapisa.jpg" alt="Portrait of Kent Rapisa" loading="lazy">
+        </div>
+        <div class="about-photo-caption">
+          <span class="about-founder-name">Kent Rapisa</span>
+          <span class="about-founder-role">Founder &amp; Creative Director</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="services" id="services">
+    <div class="section-head reveal">
+      <p class="eyebrow">Services</p>
+      <h2 class="section-title">Three disciplines. One consistent standard.</h2>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card reveal">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="6" width="16" height="16" rx="1" stroke="currentColor" stroke-width="1.4"/><circle cx="32" cy="14" r="8" stroke="currentColor" stroke-width="1.4"/><path d="M6 42 18 26l8 9 6-7 10 14H6Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="service-name">Graphic Design</h3>
+        <p class="service-desc">Brand visuals, social graphics, marketing materials, campaign assets, and other visual communication.</p>
+        <ul class="service-list">
+          <li>Brand identity &amp; visual systems</li>
+          <li>Social &amp; campaign graphics</li>
+          <li>Print &amp; marketing collateral</li>
+        </ul>
+        <a href="#contact" class="service-cta">Start a project →</a>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none"><rect x="9" y="4" width="30" height="40" rx="4" stroke="currentColor" stroke-width="1.4"/><path d="M17 14h14M17 22h14M17 30h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="service-name">Social Media Management</h3>
+        <p class="service-desc">Content planning, creative direction, visual content, campaign support, and consistent brand presentation.</p>
+        <ul class="service-list">
+          <li>Content planning &amp; calendars</li>
+          <li>Creative direction &amp; visuals</li>
+          <li>Campaign support</li>
+        </ul>
+        <a href="#contact" class="service-cta">Start a project →</a>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none"><rect x="5" y="9" width="38" height="26" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M17 42h14M24 35v7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M12 22l5-5 5 5M31 17l5 5-5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="service-name">Web Development</h3>
+        <p class="service-desc">Modern, responsive, polished websites designed around usability, performance, and conversion.</p>
+        <ul class="service-list">
+          <li>Responsive site builds</li>
+          <li>UX-focused interfaces</li>
+          <li>Performance &amp; polish</li>
+        </ul>
+        <a href="#contact" class="service-cta">Start a project →</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section class="pricing" id="pricing">
+    <div class="section-head reveal">
+      <p class="eyebrow">Pricing</p>
+      <h2 class="section-title">Straightforward packages, scoped to fit your project.</h2>
+    </div>
+
+    <div class="pricing-grid">
+      <article class="price-card reveal">
+        <div class="price-head">
+          <h3 class="price-name">Starter</h3>
+          <p class="price-desc">Best for a focused, single deliverable.</p>
+        </div>
+        <div class="price-amount"><span class="price-currency">$</span>350<span class="price-period">/ project</span></div>
+        <ul class="price-list">
+          <li>1 core deliverable (design, post set, or landing page)</li>
+          <li>2 rounds of revisions</li>
+          <li>Source files included</li>
+          <li>5–7 day turnaround</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost price-cta">Start a Project</a>
+      </article>
+
+      <article class="price-card price-card--featured reveal">
+        <span class="price-badge">Most Popular</span>
+        <div class="price-head">
+          <h3 class="price-name">Growth</h3>
+          <p class="price-desc">For an ongoing brand or content presence.</p>
+        </div>
+        <div class="price-amount"><span class="price-currency">$</span>950<span class="price-period">/ month</span></div>
+        <ul class="price-list">
+          <li>Full brand or social content system</li>
+          <li>Unlimited revision rounds</li>
+          <li>Monthly content or design calendar</li>
+          <li>Priority turnaround &amp; support</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary price-cta">Start a Project</a>
+      </article>
+
+      <article class="price-card reveal">
+        <div class="price-head">
+          <h3 class="price-name">Studio</h3>
+          <p class="price-desc">Full-scope builds — brand, site, and beyond.</p>
+        </div>
+        <div class="price-amount"><span class="price-currency">$</span>2,400<span class="price-period">/ project</span></div>
+        <ul class="price-list">
+          <li>Multi-discipline project scope</li>
+          <li>Dedicated project roadmap</li>
+          <li>Full site or brand system build</li>
+          <li>Post-launch support window</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost price-cta">Start a Project</a>
+      </article>
+    </div>
+    <p class="pricing-note reveal">Every project is scoped individually — these packages are a starting point. Get in touch for a tailored quote.</p>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section class="process" id="process">
+    <div class="section-head reveal">
+      <p class="eyebrow">Process</p>
+      <h2 class="section-title">A simple, considered path from idea to launch.</h2>
+    </div>
+
+    <div class="process-list">
+      <div class="process-step reveal">
+        <span class="process-num">01</span>
+        <div class="process-body">
+          <h3>Discover</h3>
+          <p>Understand the brand, audience, goals, and project requirements.</p>
+        </div>
+      </div>
+      <div class="process-step reveal">
+        <span class="process-num">02</span>
+        <div class="process-body">
+          <h3>Plan</h3>
+          <p>Build the creative direction, structure, and project roadmap.</p>
+        </div>
+      </div>
+      <div class="process-step reveal">
+        <span class="process-num">03</span>
+        <div class="process-body">
+          <h3>Create</h3>
+          <p>Design, develop, refine, and bring the concept to life.</p>
+        </div>
+      </div>
+      <div class="process-step reveal">
+        <span class="process-num">04</span>
+        <div class="process-body">
+          <h3>Deliver</h3>
+          <p>Finalize the project, optimize everything, and prepare the final assets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="contact-copy reveal">
+        <p class="eyebrow">Contact</p>
+        <h2 class="section-title">Have a project in mind?<br>Let's make it stand out.</h2>
+        <p class="contact-sub">Tell us a little about what you're building. We'll reply within one to two business days with next steps.</p>
+        <a class="contact-alt" href="mailto:hello@kentstudio.co">hello@kentstudio.co</a>
+      </div>
+
+      <form class="contact-form reveal" id="contactForm">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="projectType">Project type</label>
+          <select id="projectType" name="projectType">
+            <option>Graphic Design</option>
+            <option>Social Media Management</option>
+            <option>Web Development</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary contact-submit">Let's Work Together</button>
+        <p class="form-note" id="formNote" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <p class="footer-logo">Kent Studio</p>
+      <p class="footer-tag">A creative digital studio for design, social, and web.</p>
+    </div>
+    <nav class="footer-links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="footer-social">
+      <a href="#">Instagram</a>
+      <a href="#">Behance</a>
+      <a href="#">LinkedIn</a>
+      <a href="mailto:hello@kentstudio.co">hello@kentstudio.co</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Kent Studio. All rights reserved.</span>
+    <span>Design &amp; build — Kent Studio</span>
+  </div>
+</footer>
+
+<!-- ============ IMAGE LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Project image viewer">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">‹</button>
+  <div class="lightbox-stage">
+    <img src="" alt="" id="lightboxImg">
+    <div class="lightbox-caption">
+      <span id="lightboxTitle"></span>
+      <span id="lightboxMeta"></span>
+    </div>
+  </div>
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">›</button>
+</div>
+
+<!-- ============ VIDEO MODAL ============ -->
+<div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Video viewer">
+  <button class="lightbox-close" id="videoModalClose" aria-label="Close">✕</button>
+  <div class="video-stage">
+    <video id="modalVideo" controls playsinline></video>
+    <div class="lightbox-caption">
+      <span id="videoModalTitle"></span>
+      <span id="videoModalMeta"></span>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
