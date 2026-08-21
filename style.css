@@ -167,9 +167,16 @@ section{padding:var(--sp-13) clamp(var(--sp-6),5vw,var(--sp-10));max-width:var(-
   font-size:20px;
   letter-spacing:.02em;
   color:var(--silver);
-  transition:opacity .8s var(--ease), visibility .8s var(--ease);
+  transition:opacity .45s var(--ease), visibility .45s var(--ease);
 }
+.veil span{
+  opacity:0;
+  transform:translateY(6px);
+  transition:opacity .4s var(--ease) .08s, transform .4s var(--ease) .08s;
+}
+.veil:not(.is-hidden) span{opacity:1;transform:translateY(0);}
 .veil.is-hidden{opacity:0;visibility:hidden;}
+.veil.is-hidden span{opacity:0;transform:translateY(6px);}
 
 /* ---------- 4. NAVIGATION ---------- */
 .nav{
@@ -196,10 +203,30 @@ section{padding:var(--sp-13) clamp(var(--sp-6),5vw,var(--sp-10));max-width:var(-
   gap:var(--sp-6);
 }
 .nav-logo{
+  position:relative;
   font-family:var(--font-display);
   font-weight:600;
   font-size:19px;
   letter-spacing:-.01em;
+  background-image:linear-gradient(100deg,
+    var(--ivory) 0%, var(--ivory) 34%,
+    var(--blue) 46%, var(--teal) 58%,
+    var(--ivory) 70%, var(--ivory) 100%);
+  background-size:280% 100%;
+  background-position:0% 50%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  animation:logo-shimmer 7s linear infinite;
+  transition:transform .35s var(--ease-out);
+}
+.nav-logo:hover{transform:translateY(-1px) scale(1.03);}
+@keyframes logo-shimmer{
+  0%{background-position:0% 50%;}
+  100%{background-position:-280% 50%;}
+}
+@media (prefers-reduced-motion:reduce){
+  .nav-logo{animation:none;background-position:35% 50%;}
 }
 .nav-links{display:flex;gap:var(--sp-9);}
 .nav-link{
