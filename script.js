@@ -409,12 +409,32 @@ document.addEventListener("DOMContentLoaded", () => {
   bindCursor(".v-card", "Play");
   bindCursor("a, button", "");
 
-  /* ---------- contact form (front-end only demo) ---------- */
+  /* ---------- contact form -> opens the visitor's email client, prefilled ---------- */
   const contactForm = document.getElementById("contactForm");
   const formNote = document.getElementById("formNote");
+  const STUDIO_EMAIL = "hello@kentstudio.co";
+
   contactForm.addEventListener("submit", e => {
     e.preventDefault();
-    formNote.textContent = "Thanks — your message has been noted. We'll be in touch shortly.";
+    const name = contactForm.name.value.trim();
+    const email = contactForm.email.value.trim();
+    const projectType = contactForm.projectType.value;
+    const message = contactForm.message.value.trim();
+
+    const subject = `New project inquiry — ${projectType}`;
+    const body =
+      `Name: ${name}\n` +
+      `Email: ${email}\n` +
+      `Project type: ${projectType}\n\n` +
+      `${message}`;
+
+    const mailtoLink = `mailto:${STUDIO_EMAIL}` +
+      `?subject=${encodeURIComponent(subject)}` +
+      `&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoLink;
+
+    formNote.textContent = "Opening your email app to send this — hit send there to reach us.";
     contactForm.reset();
   });
 
